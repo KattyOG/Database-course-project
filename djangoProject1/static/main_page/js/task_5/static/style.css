@@ -1,0 +1,33 @@
+body {
+    padding: 30px;
+    background: rgb(255, 173, 244);
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+h1 {
+    display: block;
+    font-weight: 100;
+    color: rgb(241, 12, 127);
+}
+
+.btn-class {
+    padding: 6px;
+    background: rgb(183, 111, 250);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.btn{
+    background: rgb(93, 84, 102);
+    color: rgb(243, 31, 172);
+    border-radius: 9px;
+    height:30px;
+    width:190px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px;
+}

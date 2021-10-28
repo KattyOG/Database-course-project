@@ -1,0 +1,29 @@
+body {
+    padding: 30px;
+    background: rgb(255, 173, 244);
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.header {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(241, 12, 127);
+    margin-top: 30px;
+}
+
+.out {
+    background:  rgb(255, 173, 244);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.sub {
+    margin-top: 10px;
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    background: #a918ce;
+    outline: none;
+    transition: ease-in .3s;
+}

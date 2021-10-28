@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head><link rel="shortcut icon" href="{% static 'search_page/images/beer.png' %}" type="image/png">
+    <meta charset="utf-8">
+      <title>Add beer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700" rel="stylesheet">
+    <link href="{% static 'search_page/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'search_page/css/edit.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+{% block content %}
+    <div class="main">
+    <a href="/beer/main/search/" class="fa" style="text-decoration: none; font-size:35px;color:#333333;padding: 20px 50px;position: absolute;left: 0;">&#xf002;</a>
+        <a href="/accounts/profile/" style="font-size:40px;color:#333333;padding: 20px 50px;position: absolute;right: 0;" class="fa">&#xf007;</a>
+        <h1>Добавьте новое пиво</h1>
+    <form action="." method="post" enctype="multipart/form-data">
+{#        {{ user_form.as_p }}#}
+        <p><label for="id_username">Пивоварня:</label></p>
+        {{ brewery_form.beer_id }}
+{#        <input value="{{ id }}" >#}
+        {{ brewery_form.brewery_id}}
+        {% csrf_token %}
+        <p><input class="w-100 btn btn-lg btn-primary" type="submit" value="Сохранить изменения"></p>
+    </form>
+    </div>
+{% endblock %}
+ </body>
+</html>

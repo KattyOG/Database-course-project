@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+</head>
+<body>
+<h1 style="background: rgb(247, 124, 200); margin-bottom: 4px; padding: 20px;border-radius: 6px;text-align: center;">Games</h1>
+{{#each need_games}}
+        <div style="background: rgb(247, 124, 200); margin-bottom: 4px; padding: 20px;border-radius: 6px;text-align: center;">
+        name - {{this.name}}<br>
+        description - {{this.desc}}<br>
+        age - {{this.age}}
+        </div>
+{{/each}}
+</body>
+</html>

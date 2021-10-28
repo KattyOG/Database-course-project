@@ -1,0 +1,39 @@
+{#{% extends "base.html" %}#}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+      <link rel="shortcut icon" href="{% static 'search_page/images/beer.png' %}" type="image/png">
+      <title>Registration page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700" rel="stylesheet">
+    <link href="{% static 'search_page/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'search_page/css/edit.css' %}" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700" rel="stylesheet">
+{#    <link href="{% static 'search_page/css/signin.css' %}" rel="stylesheet">#}
+  </head>
+
+  <body class="text-center">
+
+{% block content %}
+    <div>
+    <h1>Создать аккаунт</h1>
+    <form action="." method="post">
+        {% csrf_token %}
+{#        {{ user_form.as_p }}#}
+        {{ user_form.username }}
+        {{ user_form.first_name }}
+        {{ user_form.last_name }}
+        {{ user_form.email }}
+        {{ user_form.password }}
+        {{ user_form.password2 }}
+
+        <p><input class="w-100 btn btn-lg btn-primary" type="submit" value="Создать"></p>
+    </form>
+    </div>
+{% endblock %}
+ </body>
+</html>

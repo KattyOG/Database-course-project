@@ -1,0 +1,1 @@
+{"id":"1","l_leaf":{"id":"2","l_leaf":{"id":"5","l_leaf":null,"r_leaf":null},"r_leaf":{"id":"6","l_leaf":null,"r_leaf":null}},"r_leaf":{"id":"3","l_leaf":{"id":"4","l_leaf":{"id":"7","l_leaf":{"id":"9","l_leaf":null,"r_leaf":null},"r_leaf":null},"r_leaf":{"id":"8","l_leaf":null,"r_leaf":null}},"r_leaf":null}}

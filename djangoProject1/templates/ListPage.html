@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="shortcut icon" href="{% static 'search_page/images/beer.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'search_page/css/ListPage.css' %}">
+    <title>Beers list</title>
+</head>
+<body>
+<h1>Результаты поиска</h1>
+<a href="/beer/main/search/" class="fa" style="text-decoration: none; font-size:35px;color:#333333;padding: 0px 50px;position: absolute">&#xf002;</a>
+{% if user.is_authenticated %}
+        {% csrf_token %}
+    <a href="/accounts/profile/" style="font-size:40px;color:#333333;padding: 0px 50px;position: absolute;right: 0;" class="fa">&#xf007;</a>
+    {% else %}
+    <a  href="/accounts/login/" style="font-size:40px;color:#333333;padding: 0px 50px;position: absolute;right: 0;text-decoration: none;" class="fa">&#xf090;</a>
+    {% endif %}
+ <ul>
+    {% for i in data %}
+        <li><a href="{{ i.url }} " style="padding: 6px 0px 4px 0px; color: #747373"> {{ i.name }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+[{"car":"lada","price":"300000"},{"car":"bmw","price":"5000000"},{"car":"mercedes","price":"8000000"},{"car":"volkswagen","price":"600000"},{"car":"opel","price":"500000"}]

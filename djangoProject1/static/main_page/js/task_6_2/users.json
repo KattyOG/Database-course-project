@@ -1,0 +1,17 @@
+[
+    {   "login": "Ann",
+        "password": "1234",
+        "hobby": "Dancing",
+        "age": 18
+    },
+    {   "login": "Bob01",
+        "password": "qwerty",
+        "hobby": "Boxing",
+        "age": 15
+    },
+    {   "login": "Princess",
+        "password": "bestgirl",
+        "hobby": "Traveling",
+        "age": 20
+    }
+]

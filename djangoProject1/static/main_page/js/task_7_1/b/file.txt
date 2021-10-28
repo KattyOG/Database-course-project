@@ -1,0 +1,1 @@
+[{"store":"usa","cars":"bmw, lada"},{"store":"qq","cars":"112"},{"store":"moscow","cars":"opel"},{"store":"uk","cars":"mercedes, bmw, porshe"},{"store":"west","cars":"bmw, opel, lada"}]

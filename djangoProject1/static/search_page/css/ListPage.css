@@ -1,0 +1,80 @@
+/* List */
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, figure {
+  color: #b8b8b8;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+body{
+  /*background-color: #191919;*/
+  background: linear-gradient(to right, #ffffff 20%, #333333 20%, #333333 80%, rgb(235, 200, 255) 80%);;
+}
+
+a {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+
+   }
+/*.container {*/
+/*  width: 1000px;*/
+/*  height: 700px;*/
+/*  background-image: url("../images/back.png");*/
+/*  background-size: cover;*/
+/*}*/
+
+ul {
+  margin: auto;
+  counter-reset: index;
+  padding: 0;
+  max-width: 300px;
+}
+
+/* List element */
+li {
+  /*margin: auto;*/
+  color: #9e64b9;
+  counter-increment: index;
+  display: flex;
+  /*align-items: center;*/
+  padding: 12px 0;
+  /*box-sizing: border-box;*/
+}
+
+
+/* Element counter */
+li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-image: linear-gradient(to bottom, #ffffff, #464646);
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Element separation */
+li + li {
+  margin: auto;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+
+/*@use postcss-preset-env {*/
+/*  stage: 0;*/
+/*  autoprefixer: {*/
+/*    grid: true;*/
+/*  }*/
+/*  browsers: last 2 versions*/
+/*}*/

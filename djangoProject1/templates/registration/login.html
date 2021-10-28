@@ -1,0 +1,79 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+      <link rel="shortcut icon" href="{% static 'search_page/images/beer.png' %}" type="image/png">
+    <title>Login page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,600i,700" rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS -->
+
+<link href="{% static 'search_page/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link href="{% static 'search_page/css/signin.css' %}" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body class="text-center">
+
+<main class="form-signin">
+
+    <form method="post" action="{% url 'login' %}">
+{#        <a href="/beer/main/search/" class="fa" style="text-decoration: none; font-size:35px;color:#333333;padding: 20px 50px;position: absolute;left: 0">&#xf002;</a>#}
+        <img class="mb-4" src="{% static 'search_page/images/beer.png' %}" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Войдите в аккаунт</h1>
+    {% csrf_token %}
+
+    <div class="form-floating">
+      <input type="login" class="form-control" id="floatingInput" placeholder={{ form.username }}
+      <label for="floatingInput">Логин</label>
+
+    </div>
+
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder={{ form.password }}
+      <label for="floatingPassword">Пароль</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+<p>Если вы еще не являетесь ценителем пива <a href="/accounts/register">зарегистрируйтесь здесь</a></p>
+    {% if form.errors %}
+      <p>Ваше имя пользователя и пароль не совпадают. Пожалуйста, попробуйте еще раз.</p>
+    {% endif %}
+
+    {% if next %}
+      {% if user.is_authenticated %}
+        <p>У вашей учетной записи нет доступа к этой странице. Чтобы продолжить, пожалуйста, войдите в систему с учетной записью, у которой есть доступ.</p>
+      {% else %}
+        <p>Пожалуйста, войдите, чтобы увидеть эту страницу.</p>
+      {% endif %}
+    {% endif %}
+{# Assumes you setup the password_reset view in your URLconf#}
+{#<p><a href="{% url 'password_reset' %}">Lost password?</a></p>#}
+
+</main>
+  </body>
+</html>

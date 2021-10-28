@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Input Animation</title>
+</head>
+
+<body id="body">
+    <div class="container">
+            <div class="form__container">
+                <div class="label__name">
+                    <span class="header">
+                        Получение машины
+                    </span>
+                </div>
+                <div class="form">
+                    <label for="name" class="label-name">
+                        <span class="content-name">
+                            Марка
+                        </span>
+                    </label>
+                    <input type="text" name="a" autocomplete="off" required>
+                </div>
+                
+                <button class="sub" onclick="makeAction()">Получить</button>
+            </div>
+            <div class="guidance">
+                <div class="out" id="out_txt"></div>
+            </div>
+    </div>
+
+    <script>
+        "use strict";
+
+        const f = document.getElementById("out_txt")
+    
+        function ajaxGet(urlString, callback) {
+            let r = new XMLHttpRequest();
+            r.open("GET", urlString, true);
+            r.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            r.send(null);
+            r.onload = function() {
+                callback(r.response);
+            }
+        }
+    
+        function makeAction() {
+            const a = document.getElementsByName( "a" )[0].value                
+            const url = `getCar?car=${a}`
+            ajaxGet(url, function(answerString) {
+                const answerObject = JSON.parse(answerString);
+                f.innerHTML = 
+                `Машина: ${answerObject.car}<br>
+                Стоимость: ${answerObject.price}`
+            });
+        }
+    </script>
+</body>
+
+</html>
